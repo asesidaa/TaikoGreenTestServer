@@ -58,6 +58,7 @@ public class MuchaController : BaseController<MuchaController>
     [HttpPost("/mucha_front/updatacheck.do")]
     public ContentResult UpdateCheck(MuchaBoardAuthRequest request)
     {
+        // TODO: Figure out how to pass mucha check properly
         var response = new Dictionary<string, string>
         {
             { "RESULTS", "001" },
