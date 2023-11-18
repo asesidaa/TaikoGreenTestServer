@@ -20,6 +20,11 @@ public class InitialDataCheckController : BaseController<InitialDataCheckControl
 			IsItemshop = false,
 			IsGhostbattleplay = true
 		};
+		response.AryTelopDatas.Add(new InitialdatacheckResponse.InformationData
+		{
+			InfoId = 1,
+			VerupNo = 2
+		});
 
 		return Ok(response);
 	}
