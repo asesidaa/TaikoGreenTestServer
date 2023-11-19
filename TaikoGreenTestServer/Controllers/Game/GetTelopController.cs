@@ -1,11 +1,11 @@
-﻿namespace TaikoGreenTestServer.Controllers.Game;
+﻿using TaikoGreenTestServer.Utils;
+
+namespace TaikoGreenTestServer.Controllers.Game;
 
 [Route("/v11r01/chassis/gettelop.php")]
 [ApiController]
 public class GetTelopController : BaseController<GetTelopController>
 {
-    private const string DateTimeFormat = "yyyyMMddHHmmss";
-    
     [HttpPost]
     [Produces("application/protobuf")]
     public IActionResult GetTelop([FromBody] GettelopRequest request)
@@ -18,8 +18,8 @@ public class GetTelopController : BaseController<GetTelopController>
         var response = new GettelopResponse
         {
             Result = 1,
-            StartDatetime = startDateTime.ToString(DateTimeFormat),
-            EndDatetime = endDateTime.ToString(DateTimeFormat),
+            StartDatetime = startDateTime.ToString(Constants.DATE_TIME_FORMAT),
+            EndDatetime = endDateTime.ToString(Constants.DATE_TIME_FORMAT),
             Telop = "Hello world",
             VerupNo = 2
         };
